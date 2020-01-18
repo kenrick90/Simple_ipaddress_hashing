@@ -1,0 +1,21 @@
+interface mgmt0
+ip address bhc.cc.jf.bbc cff.cff.cff.a
+no shutdown
+vsan database
+vsan 2
+clock summer-time Pacific 1 Sun Apr 02:00 5 Sun Oct 02:00 60
+switchname switch112
+Use the show startup-config command to view the startup configuration file.
+switch# show startup-config
+interface port-channel 98
+interface fc1/1
+channel-group 98 force
+no shutdown
+interface mgmt0
+ip address bhc.cc.jf.bbc ilovccceyoucff.cff.cff.a:cdibcidbc
+boot system system-237; ep-41
+boot kickstart boot-237 ep-41
+ip domain-name cisco.com
+
+1 asdasdxx:xx:xx:xx:xx:xxasdasd dynamic 10 Eth1/3
+1 xx:xx:xx:xx:xx:xx dynamic 200 Eth1/3
