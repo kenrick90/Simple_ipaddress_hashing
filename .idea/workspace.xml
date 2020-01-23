@@ -3,8 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="71e8560f-e17c-4503-b7bc-1c48d1b4c2f6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/folder/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/folder/test.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asdasd.sanitised" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folder2/test.txt-sanitised" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lll.sanitised" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/llll.sanitised" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/masking.py" beforeDir="false" afterPath="$PROJECT_DIR$/masking.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/new.txt" beforeDir="false" afterPath="$PROJECT_DIR$/new.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/new.txt.sanitised" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -69,42 +74,60 @@
     <session id="370875896">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="1" />
-          <entry key="txt" value="4" />
+          <entry key="lol" value="1" />
+          <entry key="py" value="3" />
+          <entry key="sanitised" value="1" />
+          <entry key="txt" value="6" />
           <entry key="txt-sanitised" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PLAIN_TEXT" value="9" />
-          <entry key="Python" value="1" />
+          <entry key="PLAIN_TEXT" value="13" />
+          <entry key="Python" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="215" />
-          <entry key="txt" value="37" />
+          <entry key="py" value="1533" />
+          <entry key="txt" value="115" />
           <entry key="txt-sanitised" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="41" />
-          <entry key="Python" value="215" />
+          <entry key="PLAIN_TEXT" value="119" />
+          <entry key="Python" value="1533" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.opened" value="1" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/masking.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="22" column="51" selection-start-line="22" selection-start-column="51" selection-end-line="22" selection-end-column="51" />
+            <state relative-caret-position="516">
+              <caret line="52" column="30" selection-start-line="52" selection-start-column="30" selection-end-line="52" selection-end-column="30" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/new.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="2" selection-start-column="2" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -121,6 +144,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>[:-]</find>
+      <find>path</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -130,17 +154,18 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/test.txt" />
-        <option value="$PROJECT_DIR$/new.txt" />
         <option value="$PROJECT_DIR$/folder/test.txt" />
+        <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/new.txt" />
         <option value="$PROJECT_DIR$/masking.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="244" />
-    <option name="y" value="577" />
-    <option name="width" value="1440" />
-    <option name="height" value="774" />
+    <option name="x" value="2072" />
+    <option name="y" value="96" />
+    <option name="width" value="1938" />
+    <option name="height" value="1092" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -154,6 +179,11 @@
             <path>
               <item name="Simple_ipaddress_hashing" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+            <path>
+              <item name="Simple_ipaddress_hashing" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="folder" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -177,6 +207,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Users\kenrick.ng\PycharmProjects\Simple_ipaddress_hashing" />
+      <recent name="D:\Users\kenrick.ng\PycharmProjects\Simple_ipaddress_hashing\folder" />
       <recent name="C:\Users\kenrick\PycharmProjects\untitled3\folder" />
     </key>
   </component>
@@ -230,8 +262,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1911" y="-9" width="1938" height="1098" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.38868323" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22633527" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -241,10 +274,10 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.4500537" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32867885" />
+      <window_info anchor="bottom" x="1934" y="365" width="1891" height="349" id="Terminal" order="8" type="WINDOWED" weight="0.37486574" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.3415682" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -255,19 +288,8 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/folder/test.txt.sanitised" />
-    <entry file="file://$PROJECT_DIR$/new.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/folder2/test.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/folder2/test.txt-sanitised">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/folder2/test.txt" />
+    <entry file="file://$PROJECT_DIR$/folder2/test.txt-sanitised" />
     <entry file="file://$PROJECT_DIR$/folder/test.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
@@ -275,10 +297,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/new.txt.sanitised" />
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" selection-start-line="6" selection-end-line="7" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/new.txt.lol">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/new.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="2" selection-start-column="2" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/masking.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="22" column="51" selection-start-line="22" selection-start-column="51" selection-end-line="22" selection-end-column="51" />
+        <state relative-caret-position="516">
+          <caret line="52" column="30" selection-start-line="52" selection-start-column="30" selection-end-line="52" selection-end-column="30" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
