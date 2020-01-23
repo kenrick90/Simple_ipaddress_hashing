@@ -1,45 +1,52 @@
 import re
-import string
+import os
 import sys
-if __name__=='__main__':
-    if len(sys.argv) == 1:
-        print "You can also give filename as a command line argument"
-        filename = raw_input("Enter Filename: ")
-    else:
-        filename = sys.argv[1]
+import string
+import shutil
+import argparse
+
+def mask_ip(path):
     ip_mapping=dict(zip(range(0,10),string.ascii_lowercase))
-    try:
-        f = open(filename,"r")
-    except:
-        print "No such file or no permissions"
-        exit()
-    nf= open(filename + ".sanitised","w")
+    f = open(path, "r")
+    nf = open(path + "-sanitised", "w")
     line = f.readline()
     while line:
-        words = line.split()
-        newwords=[]
-        for word in words:
-            #check IP address in ipv4 format  and replace them
-            if re.match(r".*[0-9][0-9]*\.[0-9][0-9]*\.[0-9][0-9]*\.[0-9][0-9]*",word):
-                wordWithIp = []
-                for c in word:
+        wordsInALine = line.split()
+        newwords = []
+        for word in wordsInALine:
+            # check IP address in ipv4 format  and replace them
+            if re.search(r"[0-9][0-9]*\.[0-9][0-9]*\.[0-9][0-9]*\.[0-9][0-9]*", word):
+                match = re.search(r"[0-9][0-9]*\.[0-9][0-9]*\.[0-9][0-9]*\.[0-9][0-9]*", word)
+                newWordWithIp = []
+                print("word is ",word)
+
+                for i in range(match.start(),match.end()):
+                    word = list(word)
+                    word_original = word[:]
                     try:
-                        c = int(c)
-                        c = ip_mapping[c]
+                        word[i]=ip_mapping[int(word_original[i])]
                     except:
-                        c = c
-                    wordWithIp.append(c)
-                    word=''.join(wordWithIp)
-            #check mac address and replace them
-            word=re.sub(r"[0-9a-zA-Z][0-9a-zA-Z][-:][0-9a-zA-Z][0-9a-zA-Z][-:]"
-                    r"[0-9a-zA-Z][0-9a-zA-Z][-:][0-9a-zA-Z][0-9a-zA-Z][-:]"
-                    r"[0-9a-zA-Z][0-9a-zA-Z][-:][0-9a-zA-Z][0-9a-zA-Z]","xx:xx:xx:xx:xx:xx",word)
+                        continue
+                word = "".join(word)
+            # check mac address and replace them
+            # word = re.sub(r"[0-9a-zA-Z][0-9a-zA-Z][-:][0-9a-zA-Z][0-9a-zA-Z][-:]"
+            #               r"[0-9a-zA-Z][0-9a-zA-Z][-:][0-9a-zA-Z][0-9a-zA-Z][-:]"
+            #               r"[0-9a-zA-Z][0-9a-zA-Z][-:][0-9a-zA-Z][0-9a-zA-Z]", "xx:xx:xx:xx:xx:xx", word)
             newwords.append(word)
         newwords = ' '.join(newwords)
-        nf.write(newwords+"\n")
+        nf.write(newwords + "\n")
         line = f.readline()
     f.close()
     nf.close()
-    print str(nf) + " file written"
 
-
+if __name__=='__main__':
+    parser = argparse.ArgumentParser(description='Directory to Sanitise')
+    parser.add_argument('indir', type=str, help='Input dir for Sanitisation')
+    parser.add_argument('outdir', type=str, help='Output dir for Sanitisation')
+    args = parser.parse_args()
+    shutil.copytree(args.indir,args.outdir)
+    for root, dirs, files in os.walk(args.outdir, topdown=True):
+        for filename in files:
+            fullpath = os.path.join(root,filename)
+            mask_ip(fullpath)
+            os.remove(fullpath)
