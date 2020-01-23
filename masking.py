@@ -6,9 +6,12 @@ import shutil
 import argparse
 
 def mask_ip(path):
+    
+    #This is the mapping if the ip digits to alphabets, 0 -> 'a' , 1 -> 'b' ...
     ip_mapping=dict(zip(range(0,10),string.ascii_lowercase))
     f = open(path, "r")
     nf = open(path + "-sanitised", "w")
+    
     line = f.readline()
     while line:
         wordsInALine = line.split()
@@ -16,18 +19,21 @@ def mask_ip(path):
         for word in wordsInALine:
             # check IP address in ipv4 format  and replace them
             if re.search(r"[0-9][0-9]*\.[0-9][0-9]*\.[0-9][0-9]*\.[0-9][0-9]*", word):
-                match = re.search(r"[0-9][0-9]*\.[0-9][0-9]*\.[0-9][0-9]*\.[0-9][0-9]*", word)
-                newWordWithIp = []
-                print("word is ",word)
-
-                for i in range(match.start(),match.end()):
-                    word = list(word)
-                    word_original = word[:]
-                    try:
-                        word[i]=ip_mapping[int(word_original[i])]
-                    except:
-                        continue
-                word = "".join(word)
+                matchlist = re.findall(r"[0-9][0-9]*\.[0-9][0-9]*\.[0-9][0-9]*\.[0-9][0-9]*", word)
+                print(matchlist)
+                for match in matchlist:
+                    print(match)
+                    m = re.search(match, word)
+                    print(str(match),m.start,m.end)
+                    for i in range(m.start(),m.end()):
+                        #word is not [1,9,2,.,1,6,8,.,0,.,1]
+                        word = list(word)
+                        word_original = word[:]
+                        try:
+                            word[i]=ip_mapping[int(word_original[i])]
+                        except:
+                            continue
+                    word = "".join(word)
             # check mac address and replace them
             # word = re.sub(r"[0-9a-zA-Z][0-9a-zA-Z][-:][0-9a-zA-Z][0-9a-zA-Z][-:]"
             #               r"[0-9a-zA-Z][0-9a-zA-Z][-:][0-9a-zA-Z][0-9a-zA-Z][-:]"
