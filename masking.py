@@ -35,7 +35,8 @@ def mask_ip(inFile, outFile, macAddress):
     nf.close()
 
 if __name__=='__main__':
-    parser = argparse.ArgumentParser(description='Mask IP address of input file by writing a output file with the IP address changed')
+    parser = argparse.ArgumentParser(description='Mask IP address of input file by writing a output file with the IP address masked. '
+                                                 '\'0\'->\'a\',\'1\'->\'b\',\'2\'->\'c\' ...')
     parser.add_argument('-R', '--recursive', action='store_true',
                         help="recursively sanitised entire directory and its files")
     parser.add_argument('-m', '--macAddress', action='store_true',
@@ -49,7 +50,7 @@ if __name__=='__main__':
         try:
             shutil.copytree(args.input,args.output)
         except:
-            print "Output directory already exist or no permission! Please try again with another " \
+            print "Output directory, '",args.output, "' already exist or no permission! Please try again with another " \
                   "output directory name or delete existing output directory folder."
             quit()
         for root, dirs, files in os.walk(args.output, topdown=True):
@@ -59,5 +60,8 @@ if __name__=='__main__':
                 mask_ip(filepath,newfilepath,args.macAddress)
                 os.remove(filepath)
         quit()
-    mask_ip(args.input, args.output, args.macAddress)
+    try:
+        mask_ip(args.input, args.output, args.macAddress)
+    except:
+        print "Failed! If this is a folder you are trying to mask, remember to use '-R' option"
 

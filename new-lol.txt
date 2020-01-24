@@ -1,0 +1,7 @@
+bcd.bcd.bcd.bcd
+bcd.bcd.bcd.bcd,123.123
+bcd.bcd.bcd.dcb,bcd.dcb.ede.fdf
+xx:xx:xx:xx:xx:xx
+xx:xx:xx:xx:xx:xx,bcd.bcd.bcd.bcd
+bcd.bcd.bcd.bcd
+
