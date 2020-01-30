@@ -1,21 +1,25 @@
 # Simple_ipaddress_hashing
 
-#########################################HOW TO MASK A SINGLE FILE############################################
+HOW TO MASK A SINGLE FILE
+############################################
 
-D:\Users\kenrick.ng\PycharmProjects\Simple_ipaddress_hashing>type logfile
+type logfile
+
 This is my ip address:192.168.0.1
 This is my mac 00:1B:44:11:3A:B7
 00:1B:44:11:3A:B7,192.168.0.1:8080
 
 
-D:\Users\kenrick.ng\PycharmProjects\Simple_ipaddress_hashing>python masking.py logfile logfile-clean
+python masking.py logfile logfile-clean
 
-D:\Users\kenrick.ng\PycharmProjects\Simple_ipaddress_hashing>type logfile-clean
+type logfile-clean
+
 This is my ip address:bjc.bgi.a.b
 This is my mac 00:1B:44:11:3A:B7
 00:1B:44:11:3A:B7,bjc.bgi.a.b:8080
 
-#########################################HOW TO MASK A RECURSIVELY A FOLDER OF LOGS RECURSIVELY############################################
+HOW TO MASK A RECURSIVELY A FOLDER OF LOGS RECURSIVELY
+############################################
 
 D:\Users\kenrick.ng\PycharmProjects\Simple_ipaddress_hashing>dir
  Volume in drive D is Data
