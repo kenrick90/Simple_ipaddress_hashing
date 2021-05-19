@@ -3,6 +3,33 @@ import os
 import string
 import shutil
 import argparse
+
+def inverse_ip(inFile,outFile):
+    ip_mapping=dict(zip(string.ascii_lowercase,range(0,10)))
+    print(ip_mapping)
+    f = open(inFile, "r")
+    nf = open(outFile, "w")
+    line = f.readline()
+    while line:
+        if re.search(r"[a-j][a-j]*\.[a-j][a-j]*\.[a-j][a-j]*\.[a-j][a-j]*", line):
+            matchlist = re.findall(r"[a-j][a-j]*\.[a-j][a-j]*\.[a-j][a-j]*\.[a-j][a-j]*", line)
+            for match in matchlist:
+                m = re.search(match,line)
+                print(m.start())
+                for i in range(m.start(),m.end()):
+                    line = list(line)
+                    print(line)
+                    try:
+                        line[i]=str(ip_mapping[line[i]])
+                    except:
+                        # print(line)
+                        continue
+                line = "".join(line)
+        nf.write(line)
+        line = f.readline()
+    f.close()
+    nf.close()
+
 def mask_ip(inFile, outFile, macAddress):
     #This is the mapping if the ip digits to alphabets, 0 -> 'a' , 1 -> 'b' ...
     ip_mapping=dict(zip(range(0,10),string.ascii_lowercase))
@@ -41,6 +68,8 @@ if __name__=='__main__':
                         help="recursively sanitised entire directory and its files")
     parser.add_argument('-m', '--macAddress', action='store_true',
                         help="If enabled, mask mac address into xx:xx:xx:xx:xx:xx, default is not enabled")
+    parser.add_argument('-I', '--inverse', action='store_true',
+                        help="inverse the masking")
     parser.add_argument('input',type=str, help='Input directory OR file for masking')
     parser.add_argument('output',type=str, help='Output directory or file for masking')
     args = parser.parse_args()
@@ -57,11 +86,18 @@ if __name__=='__main__':
             for filename in files:
                 filepath = os.path.join(root, filename)
                 newfilepath = os.path.join(root,"masked-"+filename)
-                mask_ip(filepath,newfilepath,args.macAddress)
+                if not args.inverse:
+                    mask_ip(filepath,newfilepath,args.macAddress)
+                else:
+                    inverse_ip(filepath,newfilepath)
                 os.remove(filepath)
         quit()
     try:
-        mask_ip(args.input, args.output, args.macAddress)
+        if args.inverse:
+            print "here"
+            inverse_ip(args.input, args.output)
+        else:
+            mask_ip(args.input, args.output, args.macAddress)
     except:
         print "Failed! If this is a folder you are trying to mask, remember to use '-R' option"
 
