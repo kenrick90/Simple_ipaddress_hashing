@@ -15,14 +15,11 @@ def inverse_ip(inFile,outFile):
             matchlist = re.findall(r"[a-j][a-j]*\.[a-j][a-j]*\.[a-j][a-j]*\.[a-j][a-j]*", line)
             for match in matchlist:
                 m = re.search(match,line)
-                print(m.start())
                 for i in range(m.start(),m.end()):
                     line = list(line)
-                    print(line)
                     try:
                         line[i]=str(ip_mapping[line[i]])
                     except:
-                        # print(line)
                         continue
                 line = "".join(line)
         nf.write(line)
@@ -94,7 +91,6 @@ if __name__=='__main__':
         quit()
     try:
         if args.inverse:
-            print "here"
             inverse_ip(args.input, args.output)
         else:
             mask_ip(args.input, args.output, args.macAddress)
